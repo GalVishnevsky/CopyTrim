@@ -1,0 +1,26 @@
+{
+  "name": "Copy Trim",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extension remove white spaces before and after the copy",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "content_scripts": [
+      {
+        "matches": ["http://*/*","https://*/*"],
+        "js": ["js/oncopy.js"]
+      }
+    ]
+}
